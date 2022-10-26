@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+<h2>Listagem de Estadias</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Nome do cliente</th>
+        <th scope="col">Data de entrada</th>
+        <th scope="col">Data de saída</th>
+        <th scope="col">Valor total</th>
+        <th scope="col">Detalhes</th>
+        </tr>
+    </thead>
+<tbody>
+    {% for estadia in estadias %}
+
+        <tr>
+          <th scope="row">{{estadia.nome_cliente}}</th>
+          <td>{{estadia.data_entrada}}</td>
+          <td>{{estadia.data_saida}}</td>
+          <td>R${{estadia.valor_total}}</td>
+          <td><a href="{% url 'detalhe' estadia.id %}" style="color: black;">Veja mais</a></td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+{% endblock %}

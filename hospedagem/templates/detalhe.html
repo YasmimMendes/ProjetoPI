@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+<h3>Detalhes da estadia</h3>
+     
+    <div class="container">
+    <div class="card">
+        <div class="row">
+        <aside class="col-sm-5 border-right divImagem">
+            
+                <div style="display: flex; height:100%;align-items: center;justify-content: center;">
+                <a href="#"
+                    ><img
+                    width="200px"
+                    src="{{estadia.tipo_quarto.imagem_quarto.url}}"
+                    class="imgProdutoDetalhe"
+                /></a>
+                </div>
+    
+            <!-- gallery-wrap .end// -->
+        </aside>
+        <aside class="col-sm-7">
+            <article class="card-body p-5">
+            <h3 class="title mb-3">Tipo do quarto: {{estadia.tipo_quarto.descricao}};</h3>
+    
+            <p class="price-detail-wrap">
+                <span class="price h3 text-warning">
+                <span class="currency">R${{estadia.tipo_quarto.valor_diaria}} por diária.</span>
+                </span>
+            </p>
+
+            <a href="javascript:history.back()" class="btn btn-lg btn-outline-primary text-uppercase">
+                <i class="fas fa-shopping-cart"></i> Voltar
+            </a>
+            </article>
+            <!-- card-body.// -->
+        </aside>
+        <!-- col.// -->
+        </div>
+        <!-- row.// -->
+    </div>
+    <!-- card.// -->
+{% endblock %}
